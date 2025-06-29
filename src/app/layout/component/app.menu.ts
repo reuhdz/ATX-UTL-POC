@@ -21,8 +21,26 @@ export class AppMenu {
     ngOnInit() {
         this.model = [
             {
-                label: 'Home',
-                items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+                label: 'Template',
+                items: [{ label: 'demo', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+            },
+            {
+                label: 'Season Dashboard',
+                items: [{ label: 'Rankings', icon: 'pi pi-fw pi-home', routerLink: ['/seasondashboard/rankings'] },
+                        { label: 'Game Stats', icon: 'pi pi-fw pi-megaphone', routerLink: ['/seasondashboard/gamestats'] },
+                        { label: 'Team/Player Stats', icon: 'pi pi-fw pi-chart-scatter', routerLink: ['/seasondashboard/teamplayerstats'] }]
+            },
+            {
+                label: 'ATX UTL Player Roster',
+                items: [{ label: '2025 Active Players', icon: 'pi pi-fw pi-users', routerLink: ['playerroster/activeplayers'] }]
+            },
+            {
+                label: 'FAQ',
+                items: [{ label: 'Rookie League', icon: 'pi pi-fw pi-sparkles', routerLink: ['faq/rookieleague'] },
+                        { label: 'Pro League', icon: 'pi pi-fw pi-user-plus', routerLink: ['faq/proleague'] },
+                        { label: 'General/UTL Rules', icon: 'pi pi-fw pi-book', routerLink: ['faq/generalutlrules'] },
+                        { label: 'League Nights', icon: 'pi pi-fw pi-moon', routerLink: ['faq/leaguenights'] },
+                        { label: 'UTL Footage', icon: 'pi pi-fw pi-video', routerLink: ['faq/utlfootage'] }]
             },
             {
                 label: 'UI Components',

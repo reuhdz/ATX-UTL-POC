@@ -13,7 +13,10 @@ export const appRoutes: Routes = [
             { path: '', component: Dashboard },
             { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
             { path: 'documentation', component: Documentation },
-            { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') }
+            { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') },
+            { path: 'seasondashboard', loadChildren: () => import('./app/pages/seasondashboard/seasondashboard.routes') },
+            { path: 'faq', loadChildren: () => import('./app/pages/faq/faq.routes') },
+            { path: 'playerroster', loadChildren: () => import('./app/pages/playerroster/playerroster.routes') }
         ]
     },
     { path: 'landing', component: Landing },
