@@ -11,7 +11,7 @@ import { ImportsModule } from '../../imports';
         <div class="font-semibold text-xl mb-4"></div>
                         <p-accordion value="0">
                             <p-accordion-panel value="0">
-                                <p-accordion-header>Header I</p-accordion-header>
+                                <p-accordion-header>Tips and Tricks</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -22,7 +22,7 @@ import { ImportsModule } from '../../imports';
                             </p-accordion-panel>
 
                             <p-accordion-panel value="1">
-                                <p-accordion-header>Header II</p-accordion-header>
+                                <p-accordion-header>Pro Screener </p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
                                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
@@ -33,7 +33,7 @@ import { ImportsModule } from '../../imports';
                             </p-accordion-panel>
 
                             <p-accordion-panel value="2">
-                                <p-accordion-header>Header III</p-accordion-header>
+                                <p-accordion-header>Rookie Practice Days</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
                                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
