@@ -1,0 +1,81 @@
+<!-- Week X Game Stats -->
+<div class="card">
+    <div class="font-semibold text-xl mb-4">Season 1 Rankings</div>
+    <p-table [value]="teamRecords" sortField="ranking" [sortOrder]="1" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template #header>
+            <tr>
+                <th pSortableColumn="ranking" style="width:10%">
+                    Ranking <p-sortIcon field="ranking" />
+                </th>
+                <th pSortableColumn="name" style="width:15%">
+                    Name <p-sortIcon field="name" />
+                </th>
+                <th pSortableColumn="record" style="width:10%">
+                    Record <p-sortIcon field="record" />
+                </th>
+                <th pSortableColumn="captain" style="width:15%">
+                    Captain <p-sortIcon field="captain" />
+                </th>
+                <th pSortableColumn="nextGame" style="width:15%">
+                    Next Game <p-sortIcon field="nextGame" />
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-team>
+            <tr>
+                <td>{{ team.ranking }}</td>
+                <td>{{ team.name }}</td>
+                <td>{{ team.record }}</td>
+                <td>{{ team.captain }}</td>
+                <td>{{ team.nextGame }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>  
+
+<!-- Week X Player Stats -->
+<div class="card">
+    <div class="font-semibold text-xl mb-4">Overall Player Ranking</div>
+    <p-table [value]="overallPlayerStats" sortField="ranking" [sortOrder]="1" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template #header>
+            <tr>
+                <th pSortableColumn="ranking" style="width:10%">
+                    Ranking <p-sortIcon field="ranking" />
+                </th>
+                <th pSortableColumn="name" style="width:15%">
+                    Name <p-sortIcon field="name" />
+                </th>
+                <th pSortableColumn="team" style="width:15%">
+                    Team <p-sortIcon field="team" />
+                </th>
+                <th pSortableColumn="goals" style="width:10%">
+                    Goals <p-sortIcon field="goals" />
+                </th>
+                <th pSortableColumn="assist" style="width:10%">
+                    Assist <p-sortIcon field="assist" />
+                </th>
+                <th pSortableColumn="steals" style="width:10%">
+                    Steals <p-sortIcon field="steals" />
+                </th>
+                <th pSortableColumn="blocks" style="width:10%">
+                    Blocks <p-sortIcon field="blocks" />
+                </th>
+                <th pSortableColumn="turnOvers" style="width:10%">
+                    Turn Overs <p-sortIcon field="turnOvers" />
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-player>
+            <tr>
+                <td>{{ player.ranking }}</td>
+                <td>{{ player.name }}</td>
+                <td>{{ player.team }}</td>
+                <td>{{ player.goals }}</td>
+                <td>{{ player.assist }}</td>
+                <td>{{ player.steals }}</td>
+                <td>{{ player.blocks }}</td>
+                <td>{{ player.turnOvers }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>  
