@@ -53,4 +53,62 @@ export class SeasonDataService {
             },
         ];
     }    
+
+    getGameStats() {
+        return [
+            {
+                id: '1000',
+                homeTeam: 'Crocs',
+                awayTeam: 'Makos',
+                goals: 'Makos:5 | Crocs: 4',
+                steals: 'Makos:5 | Crocs: 4',
+                assist: 'Makos:1 | Crocs: 1',
+                blocks:'Makos:6 | Crocs: 5',
+                turnOvers:'Makos:7 | Crocs: 9',
+                score: '5-3',
+                weekWinner: 'Makos',
+                match:1,
+            },
+            {
+                id: '1000',
+                homeTeam: 'Crocs',
+                awayTeam: 'Makos',
+                goals: 'Makos:5 | Crocs: 4',
+                steals: 'Makos:5 | Crocs: 4',
+                assist: 'Makos:1 | Crocs: 1',
+                blocks:'Makos:6 | Crocs: 5',
+                turnOvers:'Makos:7 | Crocs: 9',
+                score: '5-0',
+                weekWinner: 'Makos',
+                match:2
+            },
+        ];
+    }
+
+    getHighlights() {
+        return [
+            {
+                id: '1000',
+                name: 'Reuben',
+                team: 'Makos',
+                goals: '1',
+                steals: '0',
+                assist: '1',
+                blocks:'2',
+                turnOvers:'1',
+                week: '2',
+            },
+            {
+                id: '1000',
+                name: 'Sage',
+                team: 'Crocs',
+                goals: '1',
+                steals: '0',
+                assist: '1',
+                blocks:'2',
+                turnOvers:'1',
+                week: '2',
+            },
+        ];
+    }
 };
