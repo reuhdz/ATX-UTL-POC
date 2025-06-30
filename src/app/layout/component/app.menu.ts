@@ -21,10 +21,6 @@ export class AppMenu {
     ngOnInit() {
         this.model = [
             {
-                label: 'Template',
-                items: [{ label: 'demo', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
-            },
-            {
                 label: 'Season Dashboard',
                 items: [{ label: 'Rankings', icon: 'pi pi-fw pi-home', routerLink: ['/seasondashboard/rankings'] },
                         { label: 'Game Stats', icon: 'pi pi-fw pi-megaphone', routerLink: ['/seasondashboard/gamestats'] },
@@ -41,6 +37,10 @@ export class AppMenu {
                         { label: 'General/UTL Rules', icon: 'pi pi-fw pi-book', routerLink: ['faq/generalutlrules'] },
                         { label: 'League Nights', icon: 'pi pi-fw pi-moon', routerLink: ['faq/leaguenights'] },
                         { label: 'UTL Footage', icon: 'pi pi-fw pi-video', routerLink: ['faq/utlfootage'] }]
+            },
+            {
+                label: 'Template',
+                items: [{ label: 'demo', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
             },
             {
                 label: 'UI Components',
