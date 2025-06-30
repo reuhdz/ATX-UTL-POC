@@ -13,10 +13,12 @@ import { LayoutService } from '../../layout/service/layout.service';
 
         <div class="grid grid-cols-12 gap-8">
             <div class="col-span-12 xl:col-span-6">
-                    <p-chart type="radar" [data]="radarData" [options]="radarOptions" width="300" height="200"></p-chart>
+            SK
+                    <p-chart type="radar" [data]="radarData" [options]="radarOptions" width="350" height="250"></p-chart>
             </div>
             <div class="col-span-12 xl:col-span-6">
-                <p-chart type="radar" [data]="radarData2" [options]="radarOptions" width="300" height="200"></p-chart>
+            Lesley
+                <p-chart type="radar" [data]="radarData2" [options]="radarOptions" width="350" height="250"></p-chart>
             </div>
         </div>
     </div>`
@@ -225,13 +227,22 @@ export class TeamPlayerStats {
             labels: ['Goals', 'Assist', 'Steals', 'Blocks', 'Turn Overs'],
             datasets: [
                 {
-                    label: 'SK',
-                    borderColor: documentStyle.getPropertyValue('--p-indigo-400'),
-                    pointBackgroundColor: documentStyle.getPropertyValue('--p-indigo-400'),
-                    pointBorderColor: documentStyle.getPropertyValue('--p-indigo-400'),
+                    label: 'Week 1',
+                    borderColor: documentStyle.getPropertyValue('--p-blue-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--p-blue-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--p-blue-400'),
                     pointHoverBackgroundColor: textColor,
-                    pointHoverBorderColor: documentStyle.getPropertyValue('--p-indigo-400'),
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--p-blue-400'),
                     data: [5, 4, 6, 4, 2]
+                },
+                {
+                    label: 'Week 2',
+                    borderColor: documentStyle.getPropertyValue('--p-red-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--p-red-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--p-red-400'),
+                    pointHoverBackgroundColor: textColor,
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--p-red-400'),
+                    data: [4, 8, 5, 2, 3]
                 }
             ]
         };
@@ -240,13 +251,22 @@ export class TeamPlayerStats {
             labels: ['Goals', 'Assist', 'Steals', 'Blocks', 'Turn Overs'],
             datasets: [
                 {
-                    label: 'Lesley',
-                    borderColor: documentStyle.getPropertyValue('--p-purple-400'),
-                    pointBackgroundColor: documentStyle.getPropertyValue('--p-purple-400'),
-                    pointBorderColor: documentStyle.getPropertyValue('--p-purple-400'),
+                    label: 'Week 1',
+                    borderColor: documentStyle.getPropertyValue('--p-blue-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--p-blue-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--p-blue-400'),
                     pointHoverBackgroundColor: textColor,
-                    pointHoverBorderColor: documentStyle.getPropertyValue('--p-purple-400'),
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--p-blue-400'),
                     data: [8, 3, 2, 2, 4]
+                },
+                {
+                    label: 'Week 2',
+                    borderColor: documentStyle.getPropertyValue('--p-red-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--p-red-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--p-red-400'),
+                    pointHoverBackgroundColor: textColor,
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--p-red-400'),
+                    data: [6, 5, 4, 1, 2]
                 }
             ]
         };
