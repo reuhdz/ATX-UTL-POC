@@ -81,7 +81,7 @@ export class Rankings implements OnInit {
     }
 
     generateRating(){
-      // (Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played
+      // (Points +  Assists + Steals + Blocks - Turnovers) / Games Played
       this.overallPlayerStats.forEach( player => {
         player.rating = (player.goals + player.assist + player.steals + player.blocks - player.turnOvers) / player.gamesPlayed;
       })

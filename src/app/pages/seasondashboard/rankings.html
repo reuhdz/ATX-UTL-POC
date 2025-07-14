@@ -39,7 +39,7 @@
         <p-button type="button" label="Rating Calculation" (click)="toggleDataTable(ratingCalc, $event)" 
         [style]="{ height: '20px' }" severity="info" outlined />
             <p-popover #ratingCalc id="overlay_panel" [style]="{ width: '450px' }">
-                (Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played
+                (Points + Assists + Steals + Blocks - Turnovers) / Games Played
             </p-popover>
     </div>
     <div>
@@ -80,7 +80,7 @@
         </ng-template>
         <ng-template #body let-player>
             <tr>
-                <td pTooltip="(Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played"
+                <td pTooltip="(Points + Assists + Steals + Blocks - Turnovers) / Games Played"
                 >
                     {{ player.rating }}</td>
                 <td>{{ player.name }}</td>
