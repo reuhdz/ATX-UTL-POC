@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ImportsModule } from '../../imports';
+import { Season1Data } from '../../constants/season1data';
 
 @Component({
     selector: 'app-active-players',
     standalone: true,
-    template: ` <div class="card">
-        <div class="font-semibold text-xl mb-4">Empty Page</div>
-        <p>2025 Active Players Works!</p>
-    </div>`
+    templateUrl: './activeplayers.html',
+    imports: [ImportsModule],
+    providers: []
 })
-export class ActivePlayers {}
+export class ActivePlayers implements OnInit {
+    activePlayers: any [] = [];
+    ngOnInit() {
+        this.activePlayers = Season1Data.playerRoster;
+    }
+}

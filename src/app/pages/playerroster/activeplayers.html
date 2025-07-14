@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="font-semibold text-xl mb-4">UTL Texas Active Players</div>
+    <p-table [value]="activePlayers" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template #header>
+            <tr>
+                <th pSortableColumn="Player" style="width:10%">
+                    Name <p-sortIcon field="Player" />
+                </th>
+                <th pSortableColumn="LeagueTeam" style="width:15%">
+                    League Night Team <p-sortIcon field="LeagueTeam" />
+                </th>
+                <th pSortableColumn="Level" style="width:10%">
+                    League <p-sortIcon field="Level" />
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-player>
+            <tr>
+                <td>{{ player.Player }}</td>
+                <td>{{ player.LeagueTeam }}</td>
+                <td>{{ player.Level }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>  

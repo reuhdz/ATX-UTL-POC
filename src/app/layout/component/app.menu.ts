@@ -22,7 +22,7 @@ export class AppMenu {
         this.model = [
             {
                 label: 'Season Dashboard',
-                items: [{ label: 'Rankings', icon: 'pi pi-fw pi-home', routerLink: ['/seasondashboard/rankings'] },
+                items: [{ label: 'Rankings', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
                         { label: 'Game Stats', icon: 'pi pi-fw pi-megaphone', routerLink: ['/seasondashboard/gamestats'] },
                         { label: 'Team/Player Stats', icon: 'pi pi-fw pi-chart-scatter', routerLink: ['/seasondashboard/teamplayerstats'] }]
             },
@@ -38,10 +38,10 @@ export class AppMenu {
                         { label: 'League Nights', icon: 'pi pi-fw pi-moon', routerLink: ['faq/leaguenights'] },
                         { label: 'UTL Footage', icon: 'pi pi-fw pi-video', routerLink: ['faq/utlfootage'] }]
             },
-            {
-                label: 'Template',
-                items: [{ label: 'demo', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
-            },
+            // {
+            //     label: 'Template',
+            //     items: [{ label: 'demo', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+            // },
             {
                 label: 'UI Components',
                 items: [
