@@ -3,8 +3,8 @@ import { SeasonTeamRecords } from '../../models/seasonteamrecords';
 import { SeasonDataService } from '../../service/seasondataservice';
 import { ImportsModule } from '../../imports';
 import { OverallPlayerStats } from '../../models/overallplayerstats';
-import { HttpClient } from '@angular/common/http';
 import { Season1Data } from '../../constants/season1data';
+import {Popover } from 'primeng/popover';
 
 @Component({
     selector: 'app-rankings',
@@ -94,6 +94,10 @@ export class Rankings implements OnInit {
         playerTeam = item.LeagueTeam;
       })
       return playerTeam;
+    }
+
+    toggleDataTable(op: Popover, event: any) {
+      op.toggle(event);
     }
    
 }

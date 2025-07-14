@@ -35,7 +35,17 @@
 
 <!-- Overall Player Stats -->
 <div class="card">
-    <div class="font-semibold text-xl mb-4">Overall Player Ranking</div>
+    <div class="font-semibold text-xl mb-4">Overall Player Ranking    
+        <p-button type="button" label="Rating Calculation" (click)="toggleDataTable(ratingCalc, $event)" 
+        [style]="{ height: '20px' }" severity="info" outlined />
+            <p-popover #ratingCalc id="overlay_panel" [style]="{ width: '450px' }">
+                (Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played
+            </p-popover>
+    </div>
+    <div>
+        
+    </div>
+    <br>
     <p-table [value]="overallPlayerStats" sortField="rating" [sortOrder]="-1" [tableStyle]="{'min-width': '60rem'}">
         <ng-template #header>
             <tr>
@@ -71,7 +81,7 @@
         <ng-template #body let-player>
             <tr>
                 <td pTooltip="(Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played"
-                matTooltip="(Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played">
+                >
                     {{ player.rating }}</td>
                 <td>{{ player.name }}</td>
                 <td>{{ player.team}}</td>

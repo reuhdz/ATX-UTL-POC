@@ -8,7 +8,9 @@ import { FluidModule } from 'primeng/fluid';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'primeng/tooltip';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { PopoverModule } from 'primeng/popover';
+import { ButtonModule } from 'primeng/button';
+// import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
    CommonModule,
    HttpClientModule,
    TooltipModule,
-   MatTooltipModule
+   PopoverModule,
+   ButtonModule
   ],
   exports: [
     TableModule,
@@ -29,7 +32,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CommonModule,
     HttpClientModule,
     TooltipModule,
-    MatTooltipModule
+    PopoverModule,
+    ButtonModule
   ],
   providers: [SeasonDataService],
 })
