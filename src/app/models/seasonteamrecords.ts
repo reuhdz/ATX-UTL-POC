@@ -5,7 +5,7 @@ export interface SeasonTeamRecords {
     image?: string;
     rating?: number;
     record?:string;
-    ranking?:string;
+    ranking?:number;
     captain?:string;
     nextGame?:string;
 }

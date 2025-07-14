@@ -8,7 +8,7 @@
                     Ranking <p-sortIcon field="ranking" />
                 </th>
                 <th pSortableColumn="name" style="width:15%">
-                    Name <p-sortIcon field="name" />
+                    Team <p-sortIcon field="name" />
                 </th>
                 <th pSortableColumn="record" style="width:10%">
                     Record <p-sortIcon field="record" />
@@ -36,16 +36,16 @@
 <!-- Overall Player Stats -->
 <div class="card">
     <div class="font-semibold text-xl mb-4">Overall Player Ranking</div>
-    <p-table [value]="overallPlayerStats" sortField="ranking" [sortOrder]="1" [tableStyle]="{'min-width': '60rem'}">
+    <p-table [value]="overallPlayerStats" sortField="rating" [sortOrder]="-1" [tableStyle]="{'min-width': '60rem'}">
         <ng-template #header>
             <tr>
-                <th pSortableColumn="ranking" style="width:10%">
-                    Ranking <p-sortIcon field="ranking" />
+                <th pSortableColumn="rating" style="width:10%" >
+                    Rating <p-sortIcon field="rating" />
                 </th>
-                <th pSortableColumn="name" style="width:15%">
+                <th pSortableColumn="name" style="width:10%">
                     Name <p-sortIcon field="name" />
                 </th>
-                <th pSortableColumn="team" style="width:15%">
+                <th pSortableColumn="team" style="width:10%">
                     Team <p-sortIcon field="team" />
                 </th>
                 <th pSortableColumn="goals" style="width:10%">
@@ -63,18 +63,23 @@
                 <th pSortableColumn="turnOvers" style="width:10%">
                     Turn Overs <p-sortIcon field="turnOvers" />
                 </th>
+                <th pSortableColumn="gamesPlayed" style="width:10%">
+                    Games Played <p-sortIcon field="gamesPlayed" />
+                </th>
             </tr>
         </ng-template>
         <ng-template #body let-player>
             <tr>
-                <td>{{ player.ranking }}</td>
+                <td pTooltip="(Points + Rebounds + Assists + Steals + Blocks - Turnovers) / Games Played">
+                    {{ player.rating }}</td>
                 <td>{{ player.name }}</td>
-                <td>{{ player.team }}</td>
+                <td>{{ player.team}}</td>
                 <td>{{ player.goals }}</td>
                 <td>{{ player.assist }}</td>
                 <td>{{ player.steals }}</td>
                 <td>{{ player.blocks }}</td>
                 <td>{{ player.turnOvers }}</td>
+                <td>{{ player.gamesPlayed }}</td>
             </tr>
         </ng-template>
     </p-table>

@@ -6,6 +6,8 @@ import { AccordionModule } from 'primeng/accordion';
 import { ChartModule } from 'primeng/chart';
 import { FluidModule } from 'primeng/fluid';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   imports: [
@@ -13,14 +15,18 @@ import { CommonModule } from '@angular/common';
    AccordionModule,
    ChartModule,
    FluidModule,
-   CommonModule
+   CommonModule,
+   HttpClientModule,
+   TooltipModule
   ],
   exports: [
     TableModule,
     AccordionModule,
     ChartModule,
     FluidModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    TooltipModule
   ],
   providers: [SeasonDataService],
 })

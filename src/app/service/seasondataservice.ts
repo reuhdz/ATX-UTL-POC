@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import * as XLSX from 'xlsx';
     
 @Injectable()
 export class SeasonDataService {
@@ -110,5 +114,18 @@ export class SeasonDataService {
                 week: '2',
             },
         ];
+    }
+    //TODO: Rankings
+    //TODO: Player overall stats
+    //TODO: Match data
+    constructor(private http: HttpClient) {}
+
+    season1Ranking: any[] = [];
+    public data: any[]=[];
+    filePath = './assets/season1Data.xlsx'; 
+   
+    getTeamRankings() {
+        // this.season1Ranking = this.parseData(0);
+        // console.log(this.readFile(this.filePath))
     }
 };
