@@ -2,31 +2,31 @@ export class Season1Data {
     public static season1Rank = [
         {
           "Team": "Makos",
-          "Record": "2W - 1D - 1L",
+          "Record": "3W - 1D - 1L",
           "Rank": 2,
           "Captain": "Reuben",
-          "Next Game": "vs Chlorine Crocs"
-        },
-        {
-          "Team": "Carp",
-          "Record": "2W - 2D - 0L",
-          "Rank": 1,
-          "Captain": "Carp",
           "Next Game": "vs Legion"
         },
         {
+          "Team": "Carp",
+          "Record": "3W - 2D - 0L",
+          "Rank": 1,
+          "Captain": "Carp",
+          "Next Game": "vs Chlorine Crocs"
+        },
+        {
           "Team": "Legion",
-          "Record": "1W - 3L",
+          "Record": "1W - 4L",
           "Rank": 3,
           "Captain": "SK",
-          "Next Game": "vs Carp"
+          "Next Game": "vs Makos"
         },
         {
           "Team": "Chlorine Crocs",
-          "Record": "1W - 3L",
+          "Record": "1W - 4L",
           "Rank": 3,
           "Captain": "Sage",
-          "Next Game": "vs Makos"
+          "Next Game": "vs Carp"
         }
       ];
     public static playerStatsWeek1 = [
