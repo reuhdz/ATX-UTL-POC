@@ -1,7 +1,7 @@
 <!-- Season Team Records -->
 <div class="card">
     <div class="font-semibold text-xl mb-4">Season 1 Rankings</div>
-    <p-table [value]="teamRecords" sortField="ranking" [sortOrder]="1" [tableStyle]="{'min-width': '60rem'}">
+    <p-table [value]="teamRecords" showGridlines  sortField="ranking" [sortOrder]="1" [tableStyle]="{'min-width': '60rem'}">
         <ng-template #header>
             <tr>
                 <th pSortableColumn="ranking" style="width:10%">
@@ -38,15 +38,24 @@
     <div class="font-semibold text-xl mb-4">Overall Player Ranking    
         <p-button type="button" label="Rating Calculation" (click)="toggleDataTable(ratingCalc, $event)" 
         [style]="{ height: '20px' }" severity="info" outlined />
-            <p-popover #ratingCalc id="overlay_panel" [style]="{ width: '450px' }">
-                (Points + Assists + Steals + Blocks - Turnovers) / Games Played
+            <p-popover #ratingCalc id="overlay_panel" [style]="{ width: '400px' }">
+                (Goals + Assists + Steals + Blocks - Turnovers) / Games Played
             </p-popover>
     </div>
     <div>
         
     </div>
     <br>
-    <p-table [value]="overallPlayerStats" sortField="rating" [sortOrder]="-1" [tableStyle]="{'min-width': '60rem'}">
+    <p-table 
+    [value]="overallPlayerStats" 
+    stripedRows 
+    sortField="rating" 
+    [sortOrder]="-1" 
+    [tableStyle]="{'min-width': '60rem'}"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 20, 30]"
+    [scrollable]="true">
         <ng-template #header>
             <tr>
                 <th pSortableColumn="rating" style="width:10%" >
@@ -80,9 +89,7 @@
         </ng-template>
         <ng-template #body let-player>
             <tr>
-                <td pTooltip="(Points + Assists + Steals + Blocks - Turnovers) / Games Played"
-                >
-                    {{ player.rating }}</td>
+                <td>{{ player.rating }}</td>
                 <td>{{ player.name }}</td>
                 <td>{{ player.team}}</td>
                 <td>{{ player.goals }}</td>

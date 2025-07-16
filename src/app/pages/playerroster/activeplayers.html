@@ -1,6 +1,14 @@
 <div class="card">
     <div class="font-semibold text-xl mb-4">UTL Texas Active Players</div>
-    <p-table [value]="activePlayers" [tableStyle]="{'min-width': '60rem'}">
+    <p-table 
+    stripedRows
+    showGridlines
+    [value]="activePlayers" 
+    [tableStyle]="{'min-width': '60rem'}"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 20, 30]"
+    [scrollable]="true">
         <ng-template #header>
             <tr>
                 <th pSortableColumn="Player" style="width:10%">
