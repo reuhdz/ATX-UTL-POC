@@ -10,7 +10,7 @@ import { ImportsModule } from '../../imports';
         <div class="font-semibold text-xl mb-4"></div>
                         <p-accordion>
                             <p-accordion-panel value="0">
-                                <p-accordion-header>Tips and Tricks</p-accordion-header>
+                                <p-accordion-header><b>Tips and Tricks</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
                                     Download our PDF for fun UTL drills and focus tips that will take your game to the next level!
