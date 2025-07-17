@@ -15,7 +15,7 @@ import { LayoutService } from '../service/layout.service';
             <button class="layout-menu-button layout-topbar-action" (click)="layoutService.onMenuToggle()">
                 <i class="pi pi-bars"></i>
             </button>
-            <a class="layout-topbar-logo" href="/">
+            <a class="layout-topbar-logo" href="/ATX-UTL-POC/">
             <img src="assets/utl_new_logo_site3.png" alt="Logo" width="50" height="50">
             
                 <span>ATX UTL</span>

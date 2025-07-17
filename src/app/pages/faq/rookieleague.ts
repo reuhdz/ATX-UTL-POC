@@ -16,7 +16,7 @@ import { ImportsModule } from '../../imports';
                                     Download our PDF for fun UTL drills and focus tips that will take your game to the next level!
                                     <br><br>
                                     <!-- Link or download a PDF -->
-                                    <a href="assets/docs/Rookie_League_Tips_Tricks.pdf" style="color: blue; text-decoration: none; font-weight: bold;" download>
+                                    <a href="assets/docs/Rookie League Tips Tricks.pdf" style="color: blue; text-decoration: none; font-weight: bold;" download>
                                       Rookie League Tips & Tricks PDF
                                     </a>
                                     </p>
