@@ -6,17 +6,19 @@ import { ImportsModule } from '../../imports';
     standalone: true,
     imports: [ImportsModule],
     template: ` <div class="card">
-        <div class="font-semibold text-xl mb-4">Empty Page</div>
-        <p>Rookie League Works!</p>
+        <div class="font-semibold text-xl mb-4">Rookie League FAQ</div>
         <div class="font-semibold text-xl mb-4"></div>
-                        <p-accordion value="0">
+                        <p-accordion>
                             <p-accordion-panel value="0">
                                 <p-accordion-header>Tips and Tricks</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                        mollit anim id est laborum.
+                                    Download our PDF for fun UTL drills and focus tips that will take your game to the next level!
+                                    <br><br>
+                                    <!-- Link or download a PDF -->
+                                    <a href="assets/docs/Rookie_League_Tips_Tricks.pdf" style="color: blue; text-decoration: none; font-weight: bold;" download>
+                                      Rookie League Tips & Tricks PDF
+                                    </a>
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
@@ -25,9 +27,11 @@ import { ImportsModule } from '../../imports';
                                 <p-accordion-header>Pro Screener </p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-                                        numquam eius modi.
+                                    Ready to level up to the Pro League—or getting prepped to? Download our PDF to get the inside scoop on the Pro League screener and grab some drills to sharpen your game!
+                                    <br><br>
+                                    <a href="assets/docs/UTL Beginner Instructional Sheet.pdf" style="color: blue; text-decoration: none; font-weight: bold;" download>
+                                    UTL Beginner Instructional Sheet PDF
+                                    </a>
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
@@ -36,9 +40,7 @@ import { ImportsModule } from '../../imports';
                                 <p-accordion-header>Rookie Practice Days</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-                                        numquam eius modi.
+                                    Sundays are rookie-league game days—pros and rookies swap in every other point. When League Nights aren't in play, Monday nights turn into open play!
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
