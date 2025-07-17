@@ -14,9 +14,7 @@ import { ImportsModule } from '../../imports';
                                 <p-accordion-header>Subs</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                        mollit anim id est laborum.
+                                    If you can't commit to 6 weeks of league night game play, talk to leadership about becoming a sub! As a sub when you're available and based on team needs you can join a team for a game night as needed so you get to still experience the high level UTL Gameplay
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
@@ -25,9 +23,9 @@ import { ImportsModule } from '../../imports';
                                 <p-accordion-header>Sign Ups</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-                                        numquam eius modi.
+ Sign up for Season 1 here: 
+<BR>
+Sign up by xx/xx/xxxx
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
@@ -36,9 +34,7 @@ import { ImportsModule } from '../../imports';
                                 <p-accordion-header>Game Night Schedule</p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-                                        numquam eius modi.
+                                        Monday nights will be from 8pm cst to 9 pm cst and Tuesday nights will be from 7pm cst to 8pm cst. Please arrive early to strategize with your team and warm up properly. All games will start 10 min past the start of the hour!
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
