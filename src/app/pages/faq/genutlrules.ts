@@ -6,39 +6,42 @@ import { ImportsModule } from '../../imports';
     standalone: true,
     imports: [ImportsModule],
     template: ` <div class="card">
-        <div class="font-semibold text-xl mb-4">Empty Page</div>
-        <p>General/UTL Rules Works!</p>
+        <div class="font-semibold text-xl mb-4">General/UTL Rules</div>
         <div class="font-semibold text-xl mb-4"></div>
-                        <p-accordion value="0">
+                        <p-accordion>
                             <p-accordion-panel value="0">
-                                <p-accordion-header>Rule Book</p-accordion-header>
+                                <p-accordion-header><b>UTL Handbook</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                        mollit anim id est laborum.
+                                        Download the latest UTL Handbook
+                                        <BR>
+                                        <a href="assets/docs/UTL-Handbook.pdf" style="color: blue; text-decoration: none; font-weight: bold;" download>
+                                         UTL Handbook PDF
+                                        </a>
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
 
                             <p-accordion-panel value="1">
-                                <p-accordion-header>Swim Offs</p-accordion-header>
+                                <p-accordion-header><b>Swim Offs</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-                                        numquam eius modi.
+                                    When a surface (1v1, 2v1, or 2v2) occurs, the torpedo is immediately placed on the bottom at the site where it occurred. 
+                                    The referee will position themselves above the torpedo with each of the two players one arm's length away on either side. 
+                                    The signal to release the two players to swim off and try to gain possession of the torpedo will be: “Ready…Go.” 
+                                    Other team members may also dive down but must not attack the torpedo immediately. 
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
 
                             <p-accordion-panel value="2">
-                                <p-accordion-header>3 On 1</p-accordion-header>
+                                <p-accordion-header><b>3 On 1</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-                                        numquam eius modi.
+                                    No more than four players are allowed to be involved in the scrap when fighting for control of the torpedo. Only two players from each team can be involved in a wrap-up. [Lockout Rule] Violation of the Lockout Rule will result in a penalty drop against the violating team.<br><br>
+                                    In the event of a 3v1, all three players from the violating team will receive a penalty strike, and the fouled player will be awarded a penalty shot on an open goal. The violating team must fall back to their wall while the opposing team stages at the halfway point on the surface.<br><br>
+                                    <b>Penalty Shot:</b> The shot is taken from between the third and fourth lines. It cannot be blocked or obstructed by any player. If the torpedo lands in the goal, it counts as a score for that team.<br><br>
+                                    <b>Missing a Penalty Shot:</b> If the player misses, the torpedo becomes live and play continues. The team on the wall may retrieve the torpedo and attempt to score.
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>

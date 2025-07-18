@@ -24,7 +24,7 @@ import { ImportsModule } from '../../imports';
                             </p-accordion-panel>
 
                             <p-accordion-panel value="1">
-                                <p-accordion-header>Pro Screener </p-accordion-header>
+                                <p-accordion-header><b>Pro Screener</b> </p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
                                     Ready to level up to the Pro League—or getting prepped to? Download our PDF to get the inside scoop on the Pro League screener and grab some drills to sharpen your game!
@@ -37,7 +37,7 @@ import { ImportsModule } from '../../imports';
                             </p-accordion-panel>
 
                             <p-accordion-panel value="2">
-                                <p-accordion-header>Rookie Practice Days</p-accordion-header>
+                                <p-accordion-header><b>Rookie Practice Days</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
                                     Sundays are rookie-league game days—pros and rookies swap in every other point. When League Nights aren't in play, Monday nights turn into open play!

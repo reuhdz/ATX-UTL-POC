@@ -6,35 +6,32 @@ import { ImportsModule } from '../../imports';
     standalone: true,
     imports: [ImportsModule],
     template: ` <div class="card">
-        <div class="font-semibold text-xl mb-4">Empty Page</div>
-        <p>League Nights Works!</p>
+        <div class="font-semibold text-xl mb-4">League Nights</div>
         <div class="font-semibold text-xl mb-4"></div>
-                        <p-accordion value="0">
+                        <p-accordion >
                             <p-accordion-panel value="0">
-                                <p-accordion-header>Subs</p-accordion-header>
+                                <p-accordion-header><b>Subs</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                    If you can't commit to 6 weeks of league night game play, talk to leadership about becoming a sub! As a sub when you're available and based on team needs you can join a team for a game night as needed so you get to still experience the high level UTL Gameplay
+                                    If you can't commit to six weeks of league-night gameplay, talk to leadership about becoming a substitute! As a substitute, when you're available and based on team needs, you can join a team for a game night as needed, allowing you to experience high-level UTL gameplay.
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
 
                             <p-accordion-panel value="1">
-                                <p-accordion-header>Sign Ups</p-accordion-header>
+                                <p-accordion-header><b>Sign Ups</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
- Sign up for Season 1 here: 
-<BR>
-Sign up by xx/xx/xxxx
+                                    Sign up for Season 1 is closed :( Season 2 sign ups coming soon....
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
 
                             <p-accordion-panel value="2">
-                                <p-accordion-header>Game Night Schedule</p-accordion-header>
+                                <p-accordion-header><b>Game Night Schedule</b></p-accordion-header>
                                 <p-accordion-content>
                                     <p class="m-0">
-                                        Monday nights will be from 8pm cst to 9 pm cst and Tuesday nights will be from 7pm cst to 8pm cst. Please arrive early to strategize with your team and warm up properly. All games will start 10 min past the start of the hour!
+                                    Monday nights run from 8:00 PM CST to 9:00 PM CST, and Tuesday nights run from 7:00 PM CST to 8:00 PM CST. Please arrive early to strategize with your team and warm up properly. All games will begin 10 minutes past the scheduled start time!
                                     </p>
                                 </p-accordion-content>
                             </p-accordion-panel>
