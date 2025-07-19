@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'primeng/tooltip';
 import { PopoverModule } from 'primeng/popover';
 import { ButtonModule } from 'primeng/button';
+import { TabsModule } from 'primeng/tabs';
 // import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ButtonModule } from 'primeng/button';
    HttpClientModule,
    TooltipModule,
    PopoverModule,
-   ButtonModule
+   ButtonModule,
+   TabsModule
   ],
   exports: [
     TableModule,
@@ -33,7 +35,8 @@ import { ButtonModule } from 'primeng/button';
     HttpClientModule,
     TooltipModule,
     PopoverModule,
-    ButtonModule
+    ButtonModule,
+    TabsModule
   ],
   providers: [SeasonDataService],
 })

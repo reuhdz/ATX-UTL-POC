@@ -12,12 +12,15 @@ import { PlayerHighlights } from '../../models/playerhighlights';
     providers: [SeasonDataService]
 })
 export class GameStats implements OnInit {
+    activeIndex: number = 0;
+
     gameStats: WeekGameStats[] = [];
     playerStats: PlayerHighlights[] = [];
     currentWeek?: string;
     homeTeam?: string;
     awayTeam?: string;
     winner?:string;
+    scrollableTabs: any[] = [];
 
     constructor(private seasonDataService: SeasonDataService) {}
 
@@ -465,6 +468,11 @@ export class GameStats implements OnInit {
         this.homeTeam = this.gameStats[0].homeTeam;
         this.awayTeam = this.gameStats[0].awayTeam;
         this.winner = this.gameStats[0].weekWinner;
-        this.currentWeek = '2';
+        this.currentWeek = 'Week 5';
+        this.scrollableTabs = Array.from({ length: 5 }, (_, i) => ({
+          title: 'Week ' + (i+1) ,
+          night1: this.gameStats,
+          night2: this.gameStats
+        }));
     }
 }

@@ -21,9 +21,7 @@ export class Rankings implements OnInit {
     overallPlayerStats: any[] = [];
 
     ngOnInit() {
-      this.overallPlayerData = [Season1Data.playerStatsWeek1, 
-                                Season1Data.playerStatsWeek2, 
-                                Season1Data.playerStatsWeek3];
+      this.overallPlayerData = Season1Data.data;
 
       this.getSeasonRecords();
       this.getOverallPlayerRecords();
