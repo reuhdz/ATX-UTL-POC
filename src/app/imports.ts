@@ -11,6 +11,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { PopoverModule } from 'primeng/popover';
 import { ButtonModule } from 'primeng/button';
 import { TabsModule } from 'primeng/tabs';
+import { DialogModule } from 'primeng/dialog';
 // import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TabsModule } from 'primeng/tabs';
    TooltipModule,
    PopoverModule,
    ButtonModule,
-   TabsModule
+   TabsModule,
+   DialogModule
   ],
   exports: [
     TableModule,
@@ -36,7 +38,8 @@ import { TabsModule } from 'primeng/tabs';
     TooltipModule,
     PopoverModule,
     ButtonModule,
-    TabsModule
+    TabsModule,
+    DialogModule
   ],
   providers: [SeasonDataService],
 })

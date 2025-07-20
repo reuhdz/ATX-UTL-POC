@@ -4,39 +4,91 @@
     <p-tabs value="{{currentWeek}}" scrollable>
         <p-tablist>
             @for(tab of scrollableTabs; track tab.value){
-                <p-tab [value]="tab.title">
-                    {{ tab.title }}
-                </p-tab>
+            <p-tab [value]="tab.title">
+                {{ tab.title }}
+            </p-tab>
             }
         </p-tablist>
         <p-tabpanels>
             @for(tab of scrollableTabs; track tab.value){
-                <p-tabpanel [value]="tab.title">
-                        <p-table [value]="tab.night1" 
-                        showGridlines 
-                        stripedRows 
-                        [tableStyle]="{'min-width': '60rem'}"
-                        expandableRow
-                        #dt
-                        dataKey="vin"
->                        
-                        <ng-template #header>
-                            <tr>
-                                <th style="width:25%">
-                                    Match Up: {{ homeTeam }} vs. {{ awayTeam }}
-                                </th>
-                                <th style="width:20%">
-                                    Winner: {{ winner }}
-                                </th>
-                            </tr>
-                            <tr>
-                                <th pSortableColumn="match" style="width:5%">
-                                    Match  <p-sortIcon field="match" />
-                                </th>
-                                <th pSortableColumn="score" style="width:5%">
-                                    Score <p-sortIcon field="score" />
-                                </th>
-                                <th pSortableColumn="goals" style="width:15%">
+            <p-tabpanel [value]="tab.title">
+                <p-table 
+                    [value]="tab.night1" 
+                    [tableStyle]="{ 'min-width': '60rem' }" 
+                    dataKey="id"
+                    [expandedRowKeys]="expandedRows">
+                    <ng-template #caption>
+                        <div class="flex flex-wrap justify-left gap-2">
+                            
+                            <p-button type="button" label="Game Highlights" (click)="toggleDataTable($event)" 
+                                [style]="{ height: '20px' }" severity="info" outlined />
+                                <p-dialog header="Game Highlights"  [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+                                    <ng-template pTemplate="header">
+                                        <a href="{{ tab.night1[0].gameLinks }}" style="color: blue; text-decoration: none; font-weight: bold;" target="_blank">Game Highlights</a>
+                                      </ng-template>
+                                    <div class="flex items-center gap-4 mb-8">
+                                        <p-table [value]="tab.night1"  [tableStyle]="{'min-width': '10rem'}">
+                                            <ng-template #header>
+                                                <tr>
+                                                    <th pSortableColumn="goals" style="width:5%">
+                                                        Goals
+                                                    </th>
+                                                    <th pSortableColumn="steals" style="width:5%">
+                                                        Steals 
+                                                    </th>
+                                                    <th pSortableColumn="assist" style="width:5%">
+                                                        Assist
+                                                    </th>
+                                                    <th pSortableColumn="blocks" style="width:5%">
+                                                        Blocks 
+                                                    </th>
+                                                    <th pSortableColumn="turnOvers" style="width:5%">
+                                                        Turn Overs
+                                                    </th>
+                                                    
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template #body let-clip>
+                                                <tr>
+                                                    <td >{{ clip.clips[0].goals }}</td>
+                                                    <td>{{ clip.clips[0].steals }}</td>
+                                                    <td >{{ clip.clips[0].assist }}</td>
+                                                    <td>{{ clip.clips[0].blocks }}</td>
+                                                    <td >{{ clip.clips[0].turnOvers }}</td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div>
+                                    
+                                </p-dialog>    
+                                <!-- <p-popover appendTo="body" #gameHighlights id="overlay_panel" [style]="{ 'min-width': '60rem' }">
+                                       {{ tab.night1[0].clips[0].goals }}
+                            </p-popover> -->
+                        </div>
+                        <div class="flex flex-wrap justify-left gap-2">
+                            <p>{{ tab.night1[0].homeTeam}} vs. {{ tab.night1[0].awayTeam}}</p>
+                        </div>
+                        <div class="flex flex-wrap justify-left gap-2">
+
+                            <p>Match Winner: {{ tab.night1[0].awayTeam}}</p>
+                        </div>
+                    </ng-template>
+                    <ng-template #header>
+                        <tr>
+                            <th style="width: 5rem"></th>
+                            <th pSortableColumn="match" >
+                                Match
+                                <p-sortIcon field="match" />
+                            </th>
+                            <th pSortableColumn="score" >
+                                Score
+                                <p-sortIcon field="score" />
+                            </th>
+                            <th pSortableColumn="winner" >
+                                Game Winner
+                                <p-sortIcon field="winner" />
+                            </th>
+                            <!-- <th pSortableColumn="goals" style="width:15%">
                                     Goals <p-sortIcon field="goals" />
                                 </th>
                                 <th pSortableColumn="assist" style="width:15%">
@@ -50,93 +102,132 @@
                                 </th>
                                 <th pSortableColumn="turnOvers" style="width:25%">
                                     Turn Overs <p-sortIcon field="turnOvers" />
-                                </th>
-                            </tr>
-                        </ng-template>
-                        <ng-template #body let-game>
-                            <tr>
-                                <!-- Toggler Column -->
-      <td>
-        <a href="#" (click)="dt.toggleRow(game)">
-          <i class="pi" [ngClass]="{'pi-chevron-down': !dt.isRowExpanded(game), 'pi-chevron-up': dt.isRowExpanded(game)}"></i>
-        </a>
-      </td>
-
-                                <td>{{ game.match }}</td>
-                                <td>{{ game.score }}</td>
-                                <td>{{ game.goals }}</td>
+                                </th> -->
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-game let-expanded="expanded">
+                        <tr>
+                            <td>
+                                <p-button type="button" pRipple [pRowToggler]="game" [text]="true" severity="secondary"
+                                    [rounded]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
+                            </td>
+                            <td>{{ game.match }}</td>
+                            <td>{{ game.score }}</td>
+                            <td>--</td>
+                            <!-- <td>{{ game.goals }}</td>
                                 <td>{{ game.assist }}</td>
                                 <td>{{ game.steals }}</td>
                                 <td>{{ game.blocks }}</td>
-                                <td>{{ game.turnOvers }}</td>
-                            </tr>
-                        </ng-template>
-                        <!-- Expanded Row Content -->
-  <ng-template pTemplate="rowexpansion" let-game>
-    <tr>
-      <td colspan="5">
-        <div class="p-3">
-          <strong>Description:</strong>
-          <p>{{game.match}}</p>
-        </div>
-      </td>
-    </tr>
-  </ng-template>
+                                <td>{{ game.turnOvers }}</td> -->
+                        </tr>
+                    </ng-template>
+                    <ng-template #expandedrow let-game>
+                        <tr>
+                            <td colspan="7">
+                                <div class="p-4">
+                                    <p-table [value]="game.teamStats" dataKey="id">
+                                        <ng-template #header>
+                        <tr>
+                            <!-- <th pSortableColumn="team" style="width:5%">
+                                                        Team <p-sortIcon field="team" />
+                                                    </th> -->
+                            <th pSortableColumn="goals" style="width:15%">
+                                Goals
+                                <p-sortIcon field="goals" />
+                            </th>
+                            <th pSortableColumn="assist" style="width:15%">
+                                Assist
+                                <p-sortIcon field="assist" />
+                            </th>
+                            <th pSortableColumn="steals" style="width:15%">
+                                Steals
+                                <p-sortIcon field="steals" />
+                            </th>
+                            <th pSortableColumn="blocks" style="width:10%">
+                                Blocks
+                                <p-sortIcon field="blocks" />
+                            </th>
+                            <th pSortableColumn="turnOvers" style="width:25%">
+                                Turn Overs
+                                <p-sortIcon field="turnOvers" />
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-teamStat>
+                        <tr>
+                            <td>{{ teamStat.goals }}</td>
+                            <td>{{ teamStat.assist }}</td>
+                            <td>{{ teamStat.steals }}</td>
+                            <td>{{ teamStat.blocks }}</td>
+                            <td>{{ teamStat.turnOvers }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+</div>
+</td>
+</tr>
+</ng-template>
+</p-table>
+<BR><BR>
+<p-table [value]="tab.night2" stripedRows [tableStyle]="{'min-width': '60rem'}">
+    <ng-template #header>
+        <tr>
+            <th style="width:25%">
+                Match Up: {{ homeTeam }} vs. {{ awayTeam }}
+            </th>
+            <th style="width:20%">
+                Winner: {{ winner }}
+            </th>
+        </tr>
+        <tr>
+            <th pSortableColumn="match" style="width:5%">
+                Match
+                <p-sortIcon field="match" />
+            </th>
+            <th pSortableColumn="score" style="width:5%">
+                Score
+                <p-sortIcon field="score" />
+            </th>
+            <th pSortableColumn="goals" style="width:15%">
+                Goals
+                <p-sortIcon field="goals" />
+            </th>
+            <th pSortableColumn="assist" style="width:15%">
+                Assist
+                <p-sortIcon field="assist" />
+            </th>
+            <th pSortableColumn="steals" style="width:15%">
+                Steals
+                <p-sortIcon field="steals" />
+            </th>
+            <th pSortableColumn="blocks" style="width:10%">
+                Blocks
+                <p-sortIcon field="blocks" />
+            </th>
+            <th pSortableColumn="turnOvers" style="width:25%">
+                Turn Overs
+                <p-sortIcon field="turnOvers" />
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-game>
+        <tr>
+            <td>{{ game.match }}</td>
+            <td>{{ game.score }}</td>
+            <td>{{ game.goals }}</td>
+            <td>{{ game.assist }}</td>
+            <td>{{ game.steals }}</td>
+            <td>{{ game.blocks }}</td>
+            <td>{{ game.turnOvers }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+</p-tabpanel>
+}
+</p-tabpanels>
+</p-tabs>
 
-                    </p-table>
-                    <BR><BR>
-                        <p-table [value]="tab.night2" stripedRows  [tableStyle]="{'min-width': '60rem'}">                        
-                            <ng-template #header>
-                                <tr>
-                                    <th style="width:25%">
-                                        Match Up: {{ homeTeam }} vs. {{ awayTeam }}
-                                    </th>
-                                    <th style="width:20%">
-                                        Winner: {{ winner }}
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th pSortableColumn="match" style="width:5%">
-                                        Match  <p-sortIcon field="match" />
-                                    </th>
-                                    <th pSortableColumn="score" style="width:5%">
-                                        Score <p-sortIcon field="score" />
-                                    </th>
-                                    <th pSortableColumn="goals" style="width:15%">
-                                        Goals <p-sortIcon field="goals" />
-                                    </th>
-                                    <th pSortableColumn="assist" style="width:15%">
-                                        Assist <p-sortIcon field="assist" />
-                                    </th>
-                                    <th pSortableColumn="steals" style="width:15%">
-                                       Steals <p-sortIcon field="steals" />
-                                    </th>
-                                    <th pSortableColumn="blocks" style="width:10%">
-                                        Blocks <p-sortIcon field="blocks" />
-                                    </th>
-                                    <th pSortableColumn="turnOvers" style="width:25%">
-                                        Turn Overs <p-sortIcon field="turnOvers" />
-                                    </th>
-                                </tr>
-                            </ng-template>
-                            <ng-template #body let-game>
-                                <tr>
-                                    <td>{{ game.match }}</td>
-                                    <td>{{ game.score }}</td>
-                                    <td>{{ game.goals }}</td>
-                                    <td>{{ game.assist }}</td>
-                                    <td>{{ game.steals }}</td>
-                                    <td>{{ game.blocks }}</td>
-                                    <td>{{ game.turnOvers }}</td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
-                </p-tabpanel>
-            }
-        </p-tabpanels>
-    </p-tabs>
-    
-</div>  
+</div>
 
 <!-- Week X Player Stats -->
 <!-- <div class="card">

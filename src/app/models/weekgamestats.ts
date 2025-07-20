@@ -11,4 +11,7 @@ export interface WeekGameStats {
     match?:number;
     score?:string;
     weekWinner?:string;
+    teamStats?: any[];
+    clips?: any[];
+    gameLinks?: string;
 }

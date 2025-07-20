@@ -3,6 +3,7 @@ import { SeasonDataService } from '../../service/seasondataservice';
 import { ImportsModule } from '../../imports';
 import { WeekGameStats } from '../../models/weekgamestats';
 import { PlayerHighlights } from '../../models/playerhighlights';
+import {Popover } from 'primeng/popover';
 
 @Component({
     selector: 'app-game-stats',
@@ -21,6 +22,9 @@ export class GameStats implements OnInit {
     awayTeam?: string;
     winner?:string;
     scrollableTabs: any[] = [];
+    expandedRows = {};
+    visible: boolean = false;
+    game1Link?: string;
 
     constructor(private seasonDataService: SeasonDataService) {}
 
@@ -474,5 +478,10 @@ export class GameStats implements OnInit {
           night1: this.gameStats,
           night2: this.gameStats
         }));
+    }
+
+    toggleDataTable( event: any) {
+      // op.toggle(event); op: Popover,
+      this.visible = true;
     }
 }

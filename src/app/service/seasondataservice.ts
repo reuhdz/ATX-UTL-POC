@@ -64,27 +64,55 @@ export class SeasonDataService {
                 id: '1000',
                 homeTeam: 'Crocs',
                 awayTeam: 'Makos',
-                goals: 'Makos:5 | Crocs: 4',
-                steals: 'Makos:5 | Crocs: 4',
-                assist: 'Makos:1 | Crocs: 1',
-                blocks:'Makos:6 | Crocs: 5',
-                turnOvers:'Makos:7 | Crocs: 9',
                 score: '5-3',
                 weekWinner: 'Makos',
                 match:1,
+                gameLinks:'https://app.box.com/s/0m47wjjipzh7vy9g5f9xvpyb8zvz3au4',
+                teamStats: [
+                    {
+                        goals: 'Makos:5 | Crocs: 4',
+                        steals: 'Makos:5 | Crocs: 4',
+                        assist: 'Makos:1 | Crocs: 1',
+                        blocks:'Makos:6 | Crocs: 5',
+                        turnOvers:'Makos:7 | Crocs: 9'
+                    }
+                ],
+                clips: [
+                    {
+                        goals: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        steals: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        assist: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        blocks:'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        turnOvers:'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302'
+                    }
+                ]
             },
             {
-                id: '1000',
+                id: '1001',
                 homeTeam: 'Crocs',
                 awayTeam: 'Makos',
-                goals: 'Makos:5 | Crocs: 4',
-                steals: 'Makos:5 | Crocs: 4',
-                assist: 'Makos:1 | Crocs: 1',
-                blocks:'Makos:6 | Crocs: 5',
-                turnOvers:'Makos:7 | Crocs: 9',
                 score: '5-0',
                 weekWinner: 'Makos',
-                match:2
+                match:2,
+                gameLinks:'https://app.box.com/s/0m47wjjipzh7vy9g5f9xvpyb8zvz3au4',
+                teamStats: [
+                    {
+                        goals: 'Makos:1 | Crocs: 6',
+                        steals: 'Makos:6 | Crocs: 4',
+                        assist: 'Makos:1 | Crocs: 1',
+                        blocks:'Makos:1 | Crocs: 4',
+                        turnOvers:'Makos:7 | Crocs: 0'
+                    }
+                ],
+                clips: [
+                    {
+                        goals: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        steals: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        assist: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        blocks:'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
+                        turnOvers:'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302'
+                    }
+                ]
             },
         ];
     }
