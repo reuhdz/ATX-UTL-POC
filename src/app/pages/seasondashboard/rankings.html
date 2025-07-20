@@ -39,7 +39,7 @@
         <p-button type="button" label="Rating Calculation" (click)="toggleDataTable(ratingCalc, $event)" 
         [style]="{ height: '20px' }" severity="info" outlined />
             <p-popover #ratingCalc id="overlay_panel" [style]="{ width: '400px' }">
-                (Goals + Assists + Steals + Blocks - Turnovers) / Games Played
+                (Goals + Assists + Steals + Blocks - Turnovers) / Matches Played
             </p-popover>
     </div>
     <div>
@@ -83,7 +83,7 @@
                     Turn Overs <p-sortIcon field="turnOvers" />
                 </th>
                 <th pSortableColumn="gamesPlayed" style="width:10%">
-                    Games Played <p-sortIcon field="gamesPlayed" />
+                    Matches Played <p-sortIcon field="gamesPlayed" />
                 </th>
             </tr>
         </ng-template>

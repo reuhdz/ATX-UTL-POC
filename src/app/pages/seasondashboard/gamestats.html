@@ -20,11 +20,14 @@
                     <ng-template #caption>
                         <div class="flex flex-wrap justify-left gap-2">
                             
-                            <p-button type="button" label="Game Highlights" (click)="toggleDataTable($event)" 
+                            <p-button type="button" label="{{ tab.night1[0].homeTeam}} vs. {{ tab.night1[0].awayTeam}}" (click)="toggleDataTable($event)" 
                                 [style]="{ height: '20px' }" severity="info" outlined />
                                 <p-dialog header="Game Highlights"  [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
                                     <ng-template pTemplate="header">
-                                        <a href="{{ tab.night1[0].gameLinks }}" style="color: blue; text-decoration: none; font-weight: bold;" target="_blank">Game Highlights</a>
+                                        <a href="{{ tab.night1[0].gameLinks }}" style="color: blue; text-decoration: none; font-weight: bold;" target="_blank">
+                                            <p-button type="button" label="Game Highlights" 
+                                            [style]="{ height: '20px' }" severity="info" [raised]="true" />
+                                        </a>
                                       </ng-template>
                                     <div class="flex items-center gap-4 mb-8">
                                         <p-table [value]="tab.night1"  [tableStyle]="{'min-width': '10rem'}">
@@ -66,25 +69,22 @@
                             </p-popover> -->
                         </div>
                         <div class="flex flex-wrap justify-left gap-2">
-                            <p>{{ tab.night1[0].homeTeam}} vs. {{ tab.night1[0].awayTeam}}</p>
-                        </div>
-                        <div class="flex flex-wrap justify-left gap-2">
 
                             <p>Match Winner: {{ tab.night1[0].awayTeam}}</p>
                         </div>
                     </ng-template>
                     <ng-template #header>
                         <tr>
-                            <th style="width: 5rem"></th>
-                            <th pSortableColumn="match" >
+                            <th style="width: .5%"></th>
+                            <th pSortableColumn="match" style="width: 2%" >
                                 Match
                                 <p-sortIcon field="match" />
                             </th>
-                            <th pSortableColumn="score" >
+                            <th pSortableColumn="score" style="width: 2%" >
                                 Score
                                 <p-sortIcon field="score" />
                             </th>
-                            <th pSortableColumn="winner" >
+                            <th pSortableColumn="winner"  style="width: 2%">
                                 Game Winner
                                 <p-sortIcon field="winner" />
                             </th>

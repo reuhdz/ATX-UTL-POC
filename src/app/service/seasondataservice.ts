@@ -1,11 +1,103 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
+import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
+
+export interface SeasonData {
+    roster: any[];
+}
+export class Season1Data {
     
-@Injectable()
+}
+
+    
+@Injectable({ providedIn: 'root'})
 export class SeasonDataService {
+
+    // BehaviorSubject holds the latest array of Player data
+    private seasonData = new BehaviorSubject<SeasonData>({roster: []});
+    public readonly seasonData$: Observable<SeasonData> = this.seasonData.asObservable();
+    
+    season1Ranking: any[] = [];
+    public data: any[]=[];
+    jsonData: any[] = [];
+
+    constructor(private http: HttpClient) {
+        this.loadExcelFromAssets('assets/UTL Season 1 Stats.xlsx');
+    }
+
+    private loadExcelFromAssets(url: string): void {
+    this.http
+        .get(url, { responseType: 'blob' })
+        .subscribe(blob => this.parseExcel(blob));
+    }
+
+    private parseExcel(blobOrFile: Blob | File): void {
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          // Read file into workbook
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+        //   console.log(workbook)
+    
+          // Pick the first sheet
+          const sheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[sheetName]
+
+          const json = worksheet ?  XLSX.utils.sheet_to_json(worksheet, {
+            header: 0       // 1 = array of arrays; omit or set header:0 for objects
+          }) : [];
+
+          // Push into the stream
+          this.seasonData.next({roster: json});
+        };
+    
+        // Read as ArrayBuffer for blobs/files
+        reader.readAsArrayBuffer(blobOrFile);
+      }
+    
+    
+
+
+
+    readExcelFile() {
+        const filePath = 'assets/UTL Season 1 Stats.xlsx'; // Replace with your file name
+  
+        this.http.get(filePath, { responseType: 'blob' }).subscribe((data: Blob) => {
+          const reader = new FileReader();
+  
+          reader.onload = (e: any) => {
+            const binaryString: string = e.target.result;
+            const workbook: XLSX.WorkBook = XLSX.read(binaryString, { type: 'binary' });
+            this.readSheet(0,workbook);
+            this.readSheet(2,workbook);
+            this.readSheet(3,workbook);
+            this.readSheet(4,workbook);
+          };
+  
+          reader.readAsBinaryString(data);
+        });
+    }
+
+    readSheet(index: number, workbook: XLSX.WorkBook) {
+        // Assuming you want to read the first sheet
+        const sheetName: string = workbook.SheetNames[index];
+        const worksheet: XLSX.WorkSheet = workbook.Sheets[sheetName];
+  
+        // Convert sheet data to JSON or other desired format
+        const excelData = XLSX.utils.sheet_to_json(worksheet);
+        console.log(excelData);
+
+        if (index == 0) {
+        //     const roster: SeasonData[]= [];
+        //     roster.push(new SeasonData(excelData));
+            
+        
+        //   this.seasonData.next(roster);
+        }
+    }
+
     getSeasonTeamRecords() {
         return [
             {
@@ -146,14 +238,12 @@ export class SeasonDataService {
     //TODO: Rankings
     //TODO: Player overall stats
     //TODO: Match data
-    constructor(private http: HttpClient) {}
 
-    season1Ranking: any[] = [];
-    public data: any[]=[];
-    filePath = './assets/season1Data.xlsx'; 
+    
+
    
     getTeamRankings() {
         // this.season1Ranking = this.parseData(0);
         // console.log(this.readFile(this.filePath))
     }
-};
+}

@@ -1765,107 +1765,167 @@ export class Season1Data {
         }
       ];
     public static playerRoster = [
-        {
-          "Player": "Reuben",
-          "LeagueTeam": "Makos",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Lesley",
-          "LeagueTeam": "Makos",
-          "Level": "Pro"
-        },
-        {
-          "Player": "James E",
-          "LeagueTeam": "Makos",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Travis",
-          "LeagueTeam": "Sub",
-          "Level": "Pro"
-        },
-        {
-          "Player": "George",
-          "LeagueTeam": "Carp",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Sage",
-          "LeagueTeam": "Chlorine Croc",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Glenn",
-          "LeagueTeam": "Chlorine Croc",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Max",
-          "LeagueTeam": "Carp",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Shaneye",
-          "LeagueTeam": "Makos",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Eddy",
-          "LeagueTeam": "Chlorine Croc",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Allie",
-          "LeagueTeam": "Chlorine Croc",
-          "Level": "Rookie"
-        },
-        {
-          "Player": "Kellie",
-          "LeagueTeam": "Carp",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Shae",
-          "LeagueTeam": "Carp",
-          "Level": "Rookie"
-        },
-        {
-          "Player": "SK",
-          "LeagueTeam": "Legion",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Diana",
-          "LeagueTeam": "Legion",
-          "Level": "Rookie"
-        },
-        {
-          "Player": "Rachel",
-          "LeagueTeam": "Legion",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Trevor",
-          "LeagueTeam": "Legion",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Manny",
-          "LeagueTeam": "Carp",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Justin",
-          "LeagueTeam": "Sub",
-          "Level": "Pro"
-        },
-        {
-          "Player": "Vivian",
-          "LeagueTeam": "Chlorine Croc",
-          "Level": "Pro"
-        }
-      ];
+      {
+        "Player": "Allie",
+        "LeagueTeam": "Chlorine Crocs",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "Ben B",
+        "LeagueTeam": "Legion",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Diana",
+        "LeagueTeam": "Legion",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "Eddy",
+        "LeagueTeam": "Chlorine Crocs",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Emma",
+        "LeagueTeam": "Legion",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "George",
+        "LeagueTeam": "Carp",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Glenn",
+        "LeagueTeam": "Chlorine Crocs",
+        "Level": "Pro"
+      },
+      {
+        "Player": "James B",
+        "LeagueTeam": "Carp",
+        "Level": "Pro"
+      },
+      {
+        "Player": "James E",
+        "LeagueTeam": "Makos",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Jeremy ",
+        "LeagueTeam": "--",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "John",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "JP",
+        "LeagueTeam": "--",
+        "Level": "Pro (IR)"
+      },
+      {
+        "Player": "Justin",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Kellie",
+        "LeagueTeam": "Carp",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Lesley",
+        "LeagueTeam": "Makos",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Lon",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Manny",
+        "LeagueTeam": "Carp",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Max",
+        "LeagueTeam": "Carp",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Patrick",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Rachel",
+        "LeagueTeam": "Legion",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Reuben",
+        "LeagueTeam": "Makos",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Rich",
+        "LeagueTeam": "Chlorine Crocs",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Sage",
+        "LeagueTeam": "Chlorine Crocs",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Sean Cheese",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Sean Croc",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Shaneye",
+        "LeagueTeam": "Makos",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "Shea",
+        "LeagueTeam": "Carp",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Sherris",
+        "LeagueTeam": "Makos",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "SK",
+        "LeagueTeam": "Legion",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Travis",
+        "LeagueTeam": "--",
+        "Level": "Pro"
+      },
+      {
+        "Player": "Vivian",
+        "LeagueTeam": "Chlorine Crocs",
+        "Level": "Rookie"
+      },
+      {
+        "Player": "Walter",
+        "LeagueTeam": "Makos",
+        "Level": "Pro"
+      }
+    ];
     public static data = [this.playerStatsWeek1,
                           this.playerStatsWeek2,
                           this.playerStatsWeek3,
