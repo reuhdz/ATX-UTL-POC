@@ -18,7 +18,7 @@ export class ActivePlayers implements OnInit {
 
         this.seasonDataService.seasonData$
         .subscribe(data => {
-          this.activePlayers = data.roster;
+          this.activePlayers = data.roster ? data.roster : [];
         })
     }
 }

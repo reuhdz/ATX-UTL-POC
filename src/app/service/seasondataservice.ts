@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
 
 export interface SeasonData {
-    roster: any[];
+    roster?: any[],
+    ranking?: any[],
+    weekX?: any [],
+    weekY?: any [],
+    overallWeek?: any []
 }
-export class Season1Data {
-    
-}
-
     
 @Injectable({ providedIn: 'root'})
 export class SeasonDataService {
@@ -40,23 +40,61 @@ export class SeasonDataService {
           const data = new Uint8Array(e.target.result);
           const workbook = XLSX.read(data, { type: 'array' });
         //   console.log(workbook)
-    
-          // Pick the first sheet
-          const sheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[sheetName]
+            // const rosterData = ;
+            // const rankingData = ;
 
-          const json = worksheet ?  XLSX.utils.sheet_to_json(worksheet, {
-            header: 0       // 1 = array of arrays; omit or set header:0 for objects
-          }) : [];
+            // Push into the stream
+            this.seasonData.next({roster: this.getRosterData(0, workbook),
+                                  ranking: this.getRankingData(1, workbook),
+                                  weekX: this.getWeekData(3, workbook),
+                                  weekY: this.getWeekData(4, workbook),
+                                  overallWeek: [this.getWeekData(2, workbook),this.getWeekData(3, workbook),
+                                    this.getWeekData(4, workbook),this.getWeekData(5, workbook),this.getWeekData(6, workbook), this.getWeekData(7, workbook)]});
+          
 
-          // Push into the stream
-          this.seasonData.next({roster: json});
+          
         };
     
         // Read as ArrayBuffer for blobs/files
         reader.readAsArrayBuffer(blobOrFile);
       }
+
+    getRankingData(index: number, workbook: XLSX.WorkBook): any {
+        // Pick the first sheet
+        const sheetName = workbook.SheetNames[index];
+        const worksheet = workbook.Sheets[sheetName]
+
+        const json = worksheet ?  XLSX.utils.sheet_to_json(worksheet, {
+          header: 0       // 1 = array of arrays; omit or set header:0 for objects
+        }) : [];
+        return json;
+    }
+
+    getRosterData(index: number, workbook: XLSX.WorkBook): any {
+        // Pick the first sheet
+        const sheetName = workbook.SheetNames[index];
+        const worksheet = workbook.Sheets[sheetName]
+
+        const json = worksheet ?  XLSX.utils.sheet_to_json(worksheet, {
+          header: 0       // 1 = array of arrays; omit or set header:0 for objects
+        }) : [];
+        // Push into the stream
+        return json;
+    }
     
+    getWeekData(index: number, workbook: XLSX.WorkBook): any {
+        // Pick the first sheet
+        const sheetName = workbook.SheetNames[index];
+        const worksheet = workbook.Sheets[sheetName]
+
+        const json = worksheet ?  XLSX.utils.sheet_to_json(worksheet, {
+          header: 0,
+          raw: true, 
+          defval: 0       // 1 = array of arrays; omit or set header:0 for objects
+        }) : [];
+        // Push into the stream
+        return json;
+    }
     
 
 
@@ -162,6 +200,7 @@ export class SeasonDataService {
                 gameLinks:'https://app.box.com/s/0m47wjjipzh7vy9g5f9xvpyb8zvz3au4',
                 teamStats: [
                     {
+                        team: '',
                         goals: 'Makos:5 | Crocs: 4',
                         steals: 'Makos:5 | Crocs: 4',
                         assist: 'Makos:1 | Crocs: 1',
@@ -170,7 +209,8 @@ export class SeasonDataService {
                     }
                 ],
                 clips: [
-                    {
+                    {   
+                        team: '',
                         goals: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
                         steals: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
                         assist: 'TO:GX010311, TO:GX010310, TO:GX010300, Stl:GX010301, Ast:GX010302',
